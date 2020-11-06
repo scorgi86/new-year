@@ -1,0 +1,93 @@
+
+html {
+    height: 100%;
+    font-family: 'Itim', cursive;
+}
+
+.re-popup {
+    position: relative;
+    background: #FFF;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width:auto;
+    max-width: 500px;
+    margin: 20px auto;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: url(../img/bg.jpg) no-repeat;
+    background-size: cover;
+    text-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+    font-size: 26px;
+}
+
+.re-main {
+    background-image: url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.re-title-2 {
+    font-family: NewYearFont;
+    font-size: 82px;
+    color: #fff;
+    text-align: center;
+}
+
+.re-title {
+    text-align: center;
+    background: url('../img/plashka.png') no-repeat;
+    background-position: 0px -30px;
+    background-size: cover;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    min-height: 133px;
+    padding-left: 130px;;
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto;
+    font-family: 'Itim', cursive;
+    display: flex;
+    align-items: center;
+}
+
+.re-title__text {
+    margin-top: -10px;
+}
+
+.re-tile {
+    width: 100px;
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    background-size: cover;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.re-tile:hover {
+    transform: scale(1.5);
+}
+
+.re-tile__image {
+    max-width: 100%;
+}
+
+.re-container {
+    width: 1170px;
+    margin: auto;
+}
+
+@font-face {
+	font-family: 'NewYearFont'; 
+	src: local('NewYearFont'),
+		url(../fonts/new-year.otf); 
+}
