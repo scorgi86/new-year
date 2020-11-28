@@ -86,8 +86,19 @@ html {
     margin: auto;
 }
 
+.re-content {
+    min-height: 100%;
+}
+
+.re-content._tree-bg {
+    background-repeat: no-repeat;
+    background-size: 38% 69%;
+    background-position: 48% 11%;
+    background-image: url(../img/tree.png);
+}
+
 @font-face {
-	font-family: 'NewYearFont'; 
+	font-family: 'NewYearFont';
 	src: local('NewYearFont'),
-		url(../fonts/new-year.otf); 
+		url(../fonts/new-year.otf);
 }
