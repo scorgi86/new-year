@@ -5,158 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
+    <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
     <!-- Magnific Popup core CSS file -->
     <link rel="stylesheet" href="./libs/magnific-popup/magnific.popup.css">
+    <title>Колейдоскоп предсказаний</title>
+</head>
+<body class="re-main">
+    <div class="re-title-2">
+        <div class="re-title__text">
+            Узнай что тебя ждет в новом году!
+        </div>
+    </div>
+    <div class="re-content _tree-bg">
 
+    </div>
     <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <!-- Magnific Popup core JS file -->
     <script src="./libs/magnific-popup/magnific.popup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+    <script src="./libs/audio.js"></script>
+    <script src="./libs/falling/index.js"></script>
     <script src="./js/main.js"></script>
-    <title>Document</title>
-</head>
-<body class="re-main">
-    <div class="re-title">
-        <div class="re-title__text">
-            Выбери свое предсказание!<br/>
-            Узнай что тебя ждет в новом году :)
-        </div>
-    </div>
-    <div class="re-container">
-        <div class="row middle-lg">
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row middle-lg">
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row middle-lg">
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="box">
-                    <div class="re-tile">
-                        <img class="re-tile__image" src="./img/item.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 </html>

@@ -8,4 +8,19 @@ $(function() {
         },
         closeBtnInside: true
     });
-})
+
+    var audio = audioPlayer();
+
+    var fall = fallingAnimation();
+
+    fall.run();
+
+    function onMouseMove() {
+        setTimeout(() => {
+            audio.play();
+        }, 1000);
+        document.body.removeEventListener('mousemove', onMouseMove);
+    }
+
+    document.body.addEventListener('mousemove', onMouseMove);
+});

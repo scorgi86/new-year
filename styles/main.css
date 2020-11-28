@@ -37,7 +37,7 @@ html {
 .re-title-2 {
     font-family: NewYearFont;
     font-size: 82px;
-    color: #fff;
+    color: #faffcc;
     text-align: center;
 }
 
@@ -47,7 +47,7 @@ html {
     background-position: 0px -30px;
     background-size: cover;
     font-size: 20px;
-    color: #fff;
+    color: #faffcc;
     font-weight: bold;
     min-height: 133px;
     padding-left: 130px;;
@@ -86,19 +86,95 @@ html {
     margin: auto;
 }
 
-.re-content {
+.re-presents-field {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    min-width: 100%;
     min-height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.re-presents-field-row {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.re-presents-field-row._space-between {
+    justify-content: space-between;
+}
+
+.re-presents-field-row._space-around {
+    justify-content: space-around;
+}
+
+.re-hidden {
+    visibility: hidden;
+}
+
+.re-image {
+    max-width: 100%;
+}
+
+.re-content {
+    flex-grow: 1;
 }
 
 .re-content._tree-bg {
     background-repeat: no-repeat;
-    background-size: 38% 69%;
+    background-size: 379px 600px;
     background-position: 48% 11%;
     background-image: url(../img/tree.png);
 }
 
+.re-present {
+    width: 100px;
+}
+
+.re-present:hover {
+    z-index: 1;
+}
+
+.re-present__image {
+    transition: 1s all;
+}
+
+.re-present__image:hover,
+.re-present__image:active {
+    transform: scale(1.2);
+    z-index: 1;
+}
+
 @font-face {
-	font-family: 'NewYearFont';
-	src: local('NewYearFont'),
-		url(../fonts/new-year.otf);
+    font-family: 'NewYearFont';
+    src: local('NewYearFont'),
+        url(../fonts/new-year.otf);
+}
+
+.bounce {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    /* -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; */
+ }
+
+@-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+    40% {-webkit-transform: translateY(-30px);}
+    60% {-webkit-transform: translateY(-15px);}
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
 }
