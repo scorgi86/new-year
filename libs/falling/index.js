@@ -14,7 +14,7 @@ function fallingAnimation(opts) {
 
     var presentsMap = [
         [1,1,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1],
-        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+        [1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1],
         [1,1,1,1,1,1,1,1,1,1,1,1,1],
         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
     ];
@@ -174,7 +174,7 @@ function fallingAnimation(opts) {
         var windowParams = getWindowParams();
         var rotate = `rotate(${_.random(0, 1) ? -1 : 1 * _.random(10, 70)}deg)`;
         el.style.transform = `translateY(-${2 * windowParams.maxHeight}px)`;
-        el.style.transition = '2s all';
+        el.style.transition = `${_.random(1,2,true)}s all`;
         el.children[0].style.transform = 'rotate(0)';
         el.children[0].style.transition = el.style.transition;
         setTimeout(() => {
@@ -206,13 +206,15 @@ function fallingAnimation(opts) {
         items.forEach((isVisible, index) => {
             elem = createElem({
                 text: 'Текст заглушка',
-                imgPath: `./img/present-${ _.random(1,3) }.png`
+                imgPath: `./img/present-${ _.random(1,8) }.png`
             });
 
-            elem.className = isVisible ? 're-present' : 're-hidden';
+            elem.className = 're-present re-hidden';
             row.className = presentsMapMeta[rowIndex].className;
             row.appendChild(elem);
-            animateFall(elem, rowIndex + 1, index + 1);
+            if (isVisible) {
+                animateFall(elem, rowIndex + 1, index + 1);
+            }
         });
 
         return row;

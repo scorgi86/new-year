@@ -1,7 +1,13 @@
 function audioPlayer(opts) {
 
-    var jingleBellsSong = './audio/bobby_helms-jingle_bells_rock.mp3';
     var audio = null;
+    var getOptions = _.memoize(function() {
+        return _.merge({
+            songPath: './audio/bobby_helms-jingle_bells_rock.mp3'
+        }, opts || {});
+    })
+
+
 
     init();
 
@@ -25,26 +31,12 @@ function audioPlayer(opts) {
 
     function init() {
         audio = createAudio();
+        // audio.muted = true;
         audio.volume = 0.1;
+        audio.autoplay = true;
     }
 
     function createAudio() {
-        return new Audio(jingleBellsSong);
-    }
-
-    function play() {
-
-    }
-
-    function stop() {
-
-    }
-
-    function pause() {
-
-    }
-
-    function volume() {
-
+        return new Audio(getOptions().songPath);
     }
 }

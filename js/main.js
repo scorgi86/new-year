@@ -1,3 +1,7 @@
+function isLocal() {
+    return location.host.indexOf('localhost') > -1 ||
+    location.host.indexOf('127.0.0') > -1;
+}
 $(function() {
     $('.re-tile').magnificPopup({
         items: {
@@ -15,12 +19,11 @@ $(function() {
 
     fall.run();
 
-    function onMouseMove() {
-        setTimeout(() => {
-            audio.play();
-        }, 1000);
-        document.body.removeEventListener('mousemove', onMouseMove);
+    if (!isLocal()) {
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                audio.play();
+            }, 5000);
+        });
     }
-
-    document.body.addEventListener('mousemove', onMouseMove);
 });
