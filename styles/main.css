@@ -31,6 +31,7 @@ html {
     height: 100%;
     display: flex;
     width: 100%;
+    min-width: 981px;
     flex-direction: column;
 }
 
@@ -102,6 +103,7 @@ html {
 .re-presents-field-row {
     display: flex;
     justify-content: flex-start;
+    position: relative;
 }
 
 .re-presents-field-row._space-between {
@@ -129,10 +131,16 @@ html {
     background-size: 379px 600px;
     background-position: center -3%;
     background-image: url(../img/tree.png);
+    transition: 0.5s background-position;
+}
+
+.re-content._tree-bg._move-to-right {
+    background-position: 90% -3%;
 }
 
 .re-present {
     width: 100px;
+    cursor: pointer;
 }
 
 .re-present:hover {
@@ -192,6 +200,70 @@ html {
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
+
+.re-modal-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    transition: 0.5s all;
+}
+
+.re-modal-wrapper._hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.re-modal-wrapper._visible {
+    display: flex;
+    visibility: visible;
+}
+
+.re-modal {
+    background: #faffcc;
+    padding: 12px;
+    position: absolute;
+    max-width: calc(100% - 24px);
+    width: 340px;
+    border-radius: 10px;
+    max-height: 640px;
+}
+
+.re-modal__header {
+    display: flex;
+}
+
+.re-modal__title {
+    flex-grow: 1;
+}
+
+.re-modal__close {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.re-modal__text {
+    word-break: break-word;
+    white-space: normal;
+    font-size: 24px;
+}
+
+.re-modal__title {
+    font-size: 32px;
+    text-align: center;
+    color: #525252;
+    font-family: NewYearFont;
+    padding-bottom: 12px;
+}
+
 .re-text {
     color: #fff;
     text-shadow: 0px 0px 25px rgba(0, 0, 0, 1);

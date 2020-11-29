@@ -6,34 +6,6 @@ function fallingAnimation(opts) {
 
     var elemStore = [];
 
-    /**
-     * TODO:
-     * Сделать рандомайзер под разные размеры экрана
-     * Сделать вывод адаптива(Пока хз что должно быть)
-     */
-
-    var presentsMap = [
-        [1,1,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1],
-        [1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1],
-        [1,1,1,1,1,1,1,1,1,1,1,1,1],
-        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-    ];
-
-    var presentsMapMeta = [
-        {
-            className: 're-presents-field-row'
-        },
-        {
-            className: 're-presents-field-row _space-around'
-        },
-        {
-            className: 're-presents-field-row _space-around'
-        },
-        {
-            className: 're-presents-field-row _space-around'
-        }
-    ]
-
     var getPresentsField = _.memoize(function() {
         return getGlobalOptions().presentsField || createPresentField();
     });
@@ -41,24 +13,41 @@ function fallingAnimation(opts) {
     var getWindowParams = _.memoize(function() {
         const pixelRatio = window.pixelRatio || 1;
         return {
-            maxWidth: screen.availWidth / pixelRatio,
-            maxHeight: screen.availHeight / pixelRatio,
+            maxWidth: document.body.clientWidth / pixelRatio,
+            maxHeight: document.body.clientHeight / pixelRatio,
         }
     });
 
     var getDefaultOptions = _.memoize(function() {
         return {
-            spacingLeft: 20,
-            spaccingRight: 20,
+            spacingLeft: 0,
+            spacingRight: 0,
         }
     });
+
+    var presentsMap = generatePresentsMap();
+
+    var presentsMapMeta = [
+        {
+            className: 're-presents-field-row _space-around'
+        },
+        {
+            className: 're-presents-field-row _space-around'
+        },
+        {
+            className: 're-presents-field-row _space-around'
+        },
+        {
+            className: 're-presents-field-row _space-around'
+        }
+    ];
 
     /**
      *
      */
     return {
         run: function(config) {
-            var config = _.merge(getDefaultOptions(), config);
+            // var config = _.merge(getDefaultOptions(), config);
             /**
              * @interface IConfig
              * @property { number } speed Скорость падаения элементов
@@ -78,15 +67,17 @@ function fallingAnimation(opts) {
      * @property { number } top позиция элемента от верхнего края
      */
 
+    /** Вернет настройки переданные в функцию fallingAnimation*/
     function getGlobalOptions() {
         return _.merge(getDefaultOptions(), opts || {});
     }
 
+    /** Вернет максимальное количесто подарков, которое мождет поместиться в строку */
     function getMaxInRow() {
         var windowParams = getWindowParams();
         var globalOptions = getGlobalOptions();
         var presentPrams = getPresentPramas();
-        return windowParams.availWidth /
+        return windowParams.maxWidth /
             (presentPrams.width + globalOptions.spacingLeft + globalOptions.spacingRight);
     }
 
@@ -111,6 +102,29 @@ function fallingAnimation(opts) {
     /** Вернет уникальный идентификатор для элемента */
     function genElemID() {
         return Date.now().valueOf();
+    }
+
+    /**
+     * Функция сгенерирует карту подарков,
+     * относительно ширины экрана и ширины одного подарка.
+     */
+    function generatePresentsMap() {
+        /** TODO: Добавить высчитывание рядов */
+        var maxInRow = getMaxInRow();
+        var maxRows = 4;
+        var result = [];
+        var row = [];
+        var i,j;
+
+        for(i = 0; i < maxRows; i++) {
+            for(j = 0; j < maxInRow; j++) {
+                row.push(1);
+            }
+            result.push(row);
+            row = [];
+        }
+
+        return result;
     }
 
     /** Создаст элемент подарка */
@@ -168,14 +182,16 @@ function fallingAnimation(opts) {
             left: nextPosition.left,
             top: nextPosition.top
         });
-    };
+    }
 
+    /** Задаст анимацию */
     function animateFall(el, row, index) {
         var windowParams = getWindowParams();
         el.style.transform = `translateY(-${2 * windowParams.maxHeight}px)`;
         el.style.transition = `${_.random(1,2,true)}s all`;
         el.children[0].style.transform = 'rotate(0)';
         el.children[0].style.transition = el.style.transition;
+
         setTimeout(() => {
             requestAnimationFrame(() => {
                 el.classList.remove('re-hidden');
@@ -196,11 +212,12 @@ function fallingAnimation(opts) {
         return presentsField;
     }
 
-    function createRowWithElems(items, rowIndex) {
+    /** Создаст строку с подартками и вернет ее */
+    function createRowWithElems(items, rowIndex, totalRowsCount) {
         var elem = null;
         var row = document.createElement('div');
         row.className = 're-presents-field-row';
-
+        row.style.top = (totalRowsCount - rowIndex - 1) * 45 + 'px';
         items.forEach((isVisible, index) => {
             elem = createElem({
                 text: 'Текст заглушка',
@@ -218,11 +235,12 @@ function fallingAnimation(opts) {
         return row;
     }
 
+    /** Построчно вставит элементы  */
     function pasteItems() {
         var context = getPresentsField();
         presentsMap.forEach((el, index) => {
             context
-                .appendChild(createRowWithElems(el, index));
+                .appendChild(createRowWithElems(el, index, presentsMap.length));
         });
     }
 }
