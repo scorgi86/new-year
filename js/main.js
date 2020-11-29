@@ -20,12 +20,20 @@ $(function() {
     var start = document.getElementById('start');
     var modal = document.getElementById('modal');
     var text = document.getElementById('text');
-    var textWrapper = document.getElementById('textWrapper')
+    var textWrapper = document.getElementById('textWrapper');
+    var audio = new Audio('./audio/ho-ho-ho.mp3');
+
+    audio.volume = 0.1;
+
     start.addEventListener('click', function() {
         fall.run();
         myaudio.volume = 0.05;
         myaudio.play();
-        modal.style.display="none"
+
+        modal.classList.add('_hidden');
+        setTimeout(function() {
+            modal.style.display = 'none';
+        }, 1000);
         document
             .getElementById('presents')
             .addEventListener('click', function(event) {
@@ -36,6 +44,7 @@ $(function() {
                     // $tree.classList.add('_move-to-right');
                     text.textContent = wishes[_.random(0, wishes.length)];
                     textWrapper.classList.add('_visible');
+                    audio.play();
                 }
             });
     });

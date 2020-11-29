@@ -141,10 +141,12 @@ html {
 .re-present {
     width: 100px;
     cursor: pointer;
+    transition: 0.3s all;
 }
 
 .re-present:hover {
     z-index: 1;
+    transform: scale(1.2)!important;
 }
 
 .re-present__image {
@@ -212,9 +214,74 @@ html {
     right: 0;
     min-width: 100%;
     height: 100%;
-    background: rgba(255,255,255,0.8);
+    background: url('../img/preview.jpg') 100% 100% no-repeat;
     transition: 0.5s all;
     z-index: 10;
+    transition: 0.3s visibility opacity;
+    opacity: 1;
+}
+
+.re-modal-wrapper._hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.re-modal-wrapper {
+}
+
+.re-modal {
+    background: #3c3c3c;
+    border-radius: 10px;
+    display: flex;
+    font-size: 41px;
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    text-align: center;
+    color: #fff;
+}
+
+.re-action {
+
+}
+
+.re-action._icon {
+    padding-top: 21px;
+}
+.re-action__text + .re-action__icon {
+    padding-top: 10px;
+}
+
+.re-action__icon {
+    display: flex;
+    justify-content: center;
+}
+
+.re-action__angle {
+    border-right: solid 2px #fff;
+    border-top: solid 2px #fff;
+    display: inline-flex;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+}
+
+.re-modal__action {
+    display: flex;
+    align-items: center;
+    background: #609666;
+    border-radius: 0 10px 10px 0;
+    padding: 0 18px;
+    cursor: pointer;
+    transition: 0.3s background-color;
+}
+
+.re-modal__action:hover {
+    background-color: #6ca973;
+}
+
+.re-modal__text {
+    padding: 43px 25px;
 }
 
 .re-text-wrapper {

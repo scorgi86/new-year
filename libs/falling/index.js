@@ -115,13 +115,15 @@ function fallingAnimation(opts) {
         var result = [];
         var row = [];
         var i,j;
+        var diff = 0;
 
         for(i = 0; i < maxRows; i++) {
-            for(j = 0; j < maxInRow; j++) {
+            for(j = 0; j < maxInRow - diff; j++) {
                 row.push(1);
             }
             result.push(row);
             row = [];
+            diff = _.random(0,5);
         }
 
         return result;
