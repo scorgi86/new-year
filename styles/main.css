@@ -217,6 +217,22 @@ html {
     z-index: 10;
 }
 
+.re-text-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 300px;
+    left: 50px;
+    max-width: 700px;
+    visibility: hidden;
+    transition: 0.3s all;
+}
+
+.re-text-wrapper._visible {
+    visibility: visible;
+}
+
 .re-text {
     color: #fff;
     text-shadow: 0px 0px 25px rgba(0, 0, 0, 1);

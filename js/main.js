@@ -19,7 +19,8 @@ $(function() {
     var myaudio = document.getElementById('myaudio');
     var start = document.getElementById('start');
     var modal = document.getElementById('modal');
-    
+    var text = document.getElementById('text');
+    var textWrapper = document.getElementById('textWrapper')
     start.addEventListener('click', function() {
         fall.run();
         myaudio.volume = 0.05;
@@ -32,8 +33,9 @@ $(function() {
                 var present = target.closest('.re-present');
 
                 if (present) {
-                    $tree.classList.add('_move-to-right');
-                    alert(wishes[_.random(0, wishes.length)]);
+                    // $tree.classList.add('_move-to-right');
+                    text.textContent = wishes[_.random(0, wishes.length)];
+                    textWrapper.classList.add('_visible');
                 }
             });
     });
