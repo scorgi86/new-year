@@ -172,7 +172,6 @@ function fallingAnimation(opts) {
 
     function animateFall(el, row, index) {
         var windowParams = getWindowParams();
-        var rotate = `rotate(${_.random(0, 1) ? -1 : 1 * _.random(10, 70)}deg)`;
         el.style.transform = `translateY(-${2 * windowParams.maxHeight}px)`;
         el.style.transition = `${_.random(1,2,true)}s all`;
         el.children[0].style.transform = 'rotate(0)';
@@ -182,7 +181,6 @@ function fallingAnimation(opts) {
                 el.classList.remove('re-hidden');
                 el.classList.add('re-present');
                 el.style.transform = `translateY(0px)`;
-                el.children[0].style.transform = rotate;
             });
         }, _.random(row * 1000, row * 2000));
     }

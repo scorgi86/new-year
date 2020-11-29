@@ -13,7 +13,7 @@ function audioPlayer(opts) {
 
     return {
         play: function() {
-            audio.play();
+            // audio.play();git s
         },
 
         pause: function() {
@@ -33,7 +33,8 @@ function audioPlayer(opts) {
         audio = createAudio();
         // audio.muted = true;
         audio.volume = 0.1;
-        audio.autoplay = true;
+        // audio.autoplay = true;
+        audio.loop = true;
     }
 
     function createAudio() {
