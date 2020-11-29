@@ -2,28 +2,41 @@ function isLocal() {
     return location.host.indexOf('localhost') > -1 ||
     location.host.indexOf('127.0.0') > -1;
 }
+
+// function animateText(el, text) {
+//     var i;
+//     for(i = 0; i < text.length; i++) {
+//         setTimeout(((letterIndex) =>
+//             () => el.textContent = text.substr(0,letterIndex))(i),
+//         i * 200);
+//     }
+// }
+
 $(function() {
 
     var fall = fallingAnimation();
     var $tree = document.getElementById('tree');
     var myaudio = document.getElementById('myaudio');
+    var start = document.getElementById('start');
+    var modal = document.getElementById('modal');
+    
+    start.addEventListener('click', function() {
+        fall.run();
+        myaudio.volume = 0.05;
+        myaudio.play();
+        modal.style.display="none"
+        document
+            .getElementById('presents')
+            .addEventListener('click', function(event) {
+                var target = event.target;
+                var present = target.closest('.re-present');
 
-    myaudio.volume = 0.05;
-    // myaudio.play();
-
-    fall.run();
-
-    document
-        .getElementById('presents')
-        .addEventListener('click', function(event) {
-            var target = event.target;
-            var present = target.closest('.re-present');
-
-            if (present) {
-                $tree.classList.add('_move-to-right');
-                alert(wishes[_.random(0, wishes.length)]);
-            }
-        });
+                if (present) {
+                    $tree.classList.add('_move-to-right');
+                    alert(wishes[_.random(0, wishes.length)]);
+                }
+            });
+    });
 });
 var wishes = [
     "Счастье уже стоит за дверью. ",
