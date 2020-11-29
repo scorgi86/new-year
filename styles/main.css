@@ -195,12 +195,41 @@ html {
     bottom: -60px;
     left: -50px;
     display: flex;
+    flex-direction: column-reverse;
+}
+
+.re-ded__message {
+    margin-left: 400px;
+    background-color: #2f2f2f;
+    border-radius: 20px;
+    border: solid 4px #2f2f2f;
+}
+
+.re-ded__message-actions {
+    display: flex;
+    color: #fff;
+    font-size: 40px;
+}
+
+.re-ded__action {
+    flex-grow: 1;
+    text-align: center;
+    padding: 12px;
+}
+
+.re-ded__action + .re-ded__action {
+    border-left: solid 1px #fff;
 }
 
 .re-message {
-    background-image: url('../img/text-border.png');
-    background-repeat: no-repeat;
     background-size: 100% 100%;
+    color: #fff;
+    max-width: 700px;
+    font-size: 32px;
+}
+
+.re-message__inner {
+    padding: 12px;
 }
 
 .re-modal-wrapper {
