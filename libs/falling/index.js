@@ -223,7 +223,7 @@ function fallingAnimation(opts) {
         items.forEach((isVisible, index) => {
             elem = createElem({
                 text: 'Текст заглушка',
-                imgPath: `./img/present-${ _.random(1,8) }.png`
+                imgPath: `./img/present-${ _.random(1,6) }.png`
             });
 
             elem.className = 're-present re-hidden';

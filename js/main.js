@@ -1,40 +1,39 @@
-$(function() {
+$(function () {
+    let test = 123;
+    let fall = fallingAnimation();
+    let myaudio = document.getElementById('myaudio');
+    let start = document.getElementById('start');
+    let modal = document.getElementById('modal')
+    let text = document.getElementById('text')
+    let textWrapper = document.getElementById('textWrapper')
+    let audio = new Audio('./audio/ho-ho-ho.mp3')
 
-    var fall = fallingAnimation();
-    var $tree = document.getElementById('tree');
-    var myaudio = document.getElementById('myaudio');
-    var start = document.getElementById('start');
-    var modal = document.getElementById('modal');
-    var text = document.getElementById('text');
-    var textWrapper = document.getElementById('textWrapper');
-    var audio = new Audio('./audio/ho-ho-ho.mp3');
+    audio.volume = 0.1
 
-    audio.volume = 0.1;
+    start.addEventListener('click', function () {
+        fall.run()
+        myaudio.volume = 0.05
+        myaudio.play()
 
-    start.addEventListener('click', function() {
-        fall.run();
-        myaudio.volume = 0.05;
-        myaudio.play();
-
-        modal.classList.add('_hidden');
-        setTimeout(function() {
-            modal.style.display = 'none';
-        }, 1000);
+        modal.classList.add('_hidden')
+        setTimeout(function () {
+            modal.style.display = 'none'
+        }, 1000)
         document
             .getElementById('presents')
-            .addEventListener('click', function(event) {
-                var target = event.target;
-                var present = target.closest('.re-present');
+            .addEventListener('click', function (event) {
+                let target = event.target
+                let present = target.closest('.re-present')
 
                 if (present) {
                     // $tree.classList.add('_move-to-right');
-                    text.textContent = wishes[_.random(0, wishes.length)];
-                    textWrapper.classList.add('_visible');
-                    audio.play();
+                    text.textContent = wishes[_.random(0, wishes.length)]
+                    textWrapper.classList.add('_visible')
+                    audio.play()
                 }
-            });
-    });
-});
+            })
+    })
+})
 var wishes = [
     "Счастье уже стоит за дверью. ",
     "Будьте внимательны к своему здоровью. ",
@@ -363,7 +362,7 @@ var wishes = [
     "В этом году удача будет преследовать Вас во всем. Вероятны крупные выигрыши и серьезные находки.",
     "Год потери спокойствия. Будет казаться, что все идет не так, как Вы того бы хотели. Стоит расслабиться, взять отпуск и собраться с мыслями, чтобы преодолеть сложный период.",
     "Год перемен. Меняйте все, в любых новых начинаниях Вас ждет успех. Побольше решительности, судьба редко дает подобные шансы.",
-    "Год четко покажет кто друг, а кто нет. В сложных ситуациях отношение знакомых будет проявляться особенно отчетливо.",
-    "Год для Вас. Не бойтесь говорить “нет” и поступать так, как считаете нужным. В противном случае фортуна не станет помогать.",
-    " В этом году ваша семья увеличится. Возможны несколько свадеб родственников. Пойманный букет в этом году – особо действенная примета на близкий брак."
-];
+  "Год четко покажет кто друг, а кто нет. В сложных ситуациях отношение знакомых будет проявляться особенно отчетливо.",
+  "Год для Вас. Не бойтесь говорить “нет” и поступать так, как считаете нужным. В противном случае фортуна не станет помогать.",
+  " В этом году ваша семья увеличится. Возможны несколько свадеб родственников. Пойманный букет в этом году – особо действенная примета на близкий брак."
+]
