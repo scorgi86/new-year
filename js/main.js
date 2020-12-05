@@ -1,6 +1,12 @@
 $(function () {
     let test = 123;
     varr;
+    qwe
+    q
+    we
+    qw
+    eqw
+    e;
     let fall = fallingAnimation();
     let myaudio = document.getElementById('myaudio');
     let start = document.getElementById('start');
