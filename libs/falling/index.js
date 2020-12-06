@@ -111,7 +111,7 @@ function fallingAnimation(opts) {
     function generatePresentsMap() {
         /** TODO: Добавить высчитывание рядов */
         var maxInRow = getMaxInRow();
-        var maxRows = 4;
+        var maxRows = 2;
         var result = [];
         var row = [];
         var i,j;

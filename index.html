@@ -18,42 +18,52 @@
         <video id="myaudio" loop hidden alt="test">
             <source src="./audio/bobby_helms-jingle_bells_rock.mp3" type="audio/mp3">
         </video>
-        <div class="re-title-2">
-            <div class="re-title__text">
-                Найди свое предсказание!
-            </div>
-        </div>
-        <div id="tree" class="re-content _tree-bg">
+        <div id="tree" class="re-content _tree-bg re-hidden">
             <div id="textWrapper" class="re-text-wrapper">
                 <div id="text" class="re-text">
                 </div>
             </div>
         </div>
-        <div id="modal" class="re-modal-wrapper">
-            <div class="re-modal">
-                <div class="re-modal__text">
-                    Хочешь узнать что тебя ждет?
+        <div class="re-scene" id="scene__first">
+            <div class="re-scene__bg">
+                <div class="re-scene__circle">
                 </div>
-                <div id="start" class="re-modal__action">
-                    <div class="re-action">
+                <div class="re-scene__star-lt"></div>
+                <div class="re-scene__star-lb"></div>
+                <div class="re-scene__lt"></div>
+                <div class="re-scene__rt"></div>
+                <div class="re-scene__lb"></div>
+                <div class="re-scene__rb"></div>
+            </div>
+            <div class="re-scene__content">
+                <div class="re-scene__title">
+                    <div class="re-title _size-m _color-red">
+                        Хочешь узнать<br/> что тебя ждет?
+                    </div>
+                </div>
+                <div class="re-scene__action">
+                    <div class="re-action" id="start">
                         <div class="re-action__text">
                             ДА!
-                        </div>
-                        <div class="re-action__icon">
-                            <span class="re-action__angle"></span>
-                            <span class="re-action__angle"></span>
-                            <span class="re-action__angle"></span>
-                            <span class="re-action__angle"></span>
-                            <span class="re-action__angle"></span>
-                            <span class="re-action__angle"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="re-scene re-hidden" id="scene__second">
+            <div class="re-scene__bg">
+                <div class="re-scene__circle-center">
+                    <div class="re-scene__tree-stars-l"></div>
+                    <div class="re-scene__tree-stars-r"></div>
+                </div>
+                <div class="re-scene__tree"></div>
+                <div class="re-scene__lt"></div>
+                <div class="re-scene__rt"></div>
+            </div>
+        </div>
         <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
         <!-- Magnific Popup core JS file -->
         <script src="./libs/magnific-popup/magnific.popup.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>

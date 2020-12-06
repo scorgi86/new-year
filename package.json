@@ -6,7 +6,7 @@
     "private": true,
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "lint": "eslint ./js/**/*.js",
+        "lint": "eslint --color ./js/**/*.js",
         "precommit": "npm run lint",
         "postinstall": "husky install"
     },
@@ -25,7 +25,9 @@
         "pre-commit": "npm run lint"
     },
     "lint-staged": {
-        "*.(js|jsx)": ["npm run lint"]
+        "*.(js|jsx)": [
+            "npm run lint"
+        ]
     },
     "dependencies": {},
     "devDependencies": {

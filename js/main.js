@@ -1,30 +1,24 @@
 $(function () {
-    let test = 123;
-    varr;
-    qwe
-    q
-    we
-    qw
-    eqw
-    e;
     let fall = fallingAnimation();
     let myaudio = document.getElementById('myaudio');
+    let firstScene = document.getElementById('scene__first');
+    let secondScene = document.getElementById('scene__second');
     let start = document.getElementById('start');
-    let modal = document.getElementById('modal')
     let text = document.getElementById('text')
     let textWrapper = document.getElementById('textWrapper')
-    let audio = new Audio('./audio/ho-ho-ho.mp3')
+    let audio = new Audio('./audio/ho-ho-ho.mp3');
 
     audio.volume = 0.1
 
-    start.addEventListener('click', function () {
+    start && start.addEventListener('click', function () {
         fall.run()
         myaudio.volume = 0.05
         myaudio.play()
 
-        modal.classList.add('_hidden')
+        firstScene.classList.add('re-hidden');
+        secondScene.classList.remove('re-hidden');
         setTimeout(function () {
-            modal.style.display = 'none'
+            firstScene.style.display = 'none'
         }, 1000)
         document
             .getElementById('presents')
