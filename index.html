@@ -15,15 +15,9 @@
     <title>Калейдоскоп предсказаний</title>
 </head>
     <body class="re-main">
-        <video id="myaudio" loop hidden alt="test">
+        <video id="myaudio" loop hidden>
             <source src="./audio/bobby_helms-jingle_bells_rock.mp3" type="audio/mp3">
         </video>
-        <div id="tree" class="re-content _tree-bg re-hidden">
-            <div id="textWrapper" class="re-text-wrapper">
-                <div id="text" class="re-text">
-                </div>
-            </div>
-        </div>
         <div class="re-scene" id="scene__first">
             <div class="re-scene__bg">
                 <div class="re-scene__circle">
@@ -65,7 +59,9 @@
 
         <div class="re-scene _letter re-scene__bg-blur re-hidden" id="scene_letter">
             <div class="re-envelop">
-                <div class="re-envelop__background"></div>
+                <div class="re-envelop__background">
+                    <div class="re-envelop__background-shadow"></div>
+                </div>
                 <div class="re-envelop__content">
                     <div class="re-letter" id="letter">
                         <div class="re-letter__wrapper _top">
