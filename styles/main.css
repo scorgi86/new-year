@@ -1,6 +1,12 @@
+@font-face {
+    font-family: 'playlistscript';
+    src: local('playlistscript'),
+        url(../fonts/Rosvigts.otf);
+}
+
 html {
     height: 100%;
-    font-family: 'Itim', cursive;
+    font-family: 'playlistscript', cursive;
 }
 
 .re-popup {
@@ -376,13 +382,17 @@ html {
 }
 
 .re-action__text {
-    font-size: 42px;
+    font-family: 'playlistscript';
+    font-size: 68px;
     padding-left: 0px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
+    padding-left: 25px;
+
 }
 
 .re-title {
-    /* font-family: Rosvigts; */
+    font-family: playlistscript;
+    font-size: 60px;
 }
 
 .re-title._color-red {
@@ -390,7 +400,7 @@ html {
 }
 
 .re-title._size-m {
-    font-size: 42px;
+    font-size: 110px;
 }
 
 .re-envelop-wrapper {
@@ -413,7 +423,7 @@ html {
 
 .re-letter__wrapper {
     border: solid 2px #efcbab;
-    padding: 0 65px;
+    padding: 0 45px;
     padding-bottom: 25px;
     position: relative;
     flex-grow: 1;
@@ -457,10 +467,7 @@ html {
 
 .re-letter__content {
     text-align: center;
-}
-
-.re-letter__inner {
-
+    font-size: 50px;
 }
 
 .re-envelop {
@@ -514,11 +521,4 @@ html {
     width: 660px;
     min-height: 536px;
     overflow: hidden;
-}
-
-@font-face {
-    font-family: 'Rosvigts';
-    src: url('../fonts/Rosvigts.eot') format('embedded-opentype');
-    font-weight: normal;
-    font-style: normal;
 }

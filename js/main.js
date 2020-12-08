@@ -11,10 +11,17 @@ $(function () {
 
     audio.volume = 0.1
 
+    // function show(index) {
+    //     setTimeout(() => {
+    //         showWish(wishes[index])
+    //         if (wishes.length > index - 1) {
+    //             show(index + 1);
+    //         }
+    //     }, 1500);
+    // }
+
     if (localStorage.getItem('wish')) {
-        setTimeout(function() {
-            showWish(localStorage.getItem('wish'));
-        }, 1000);
+        showWish(localStorage.getItem('wish'));
     } else {
 
         start && start.addEventListener('click', function () {
