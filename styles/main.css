@@ -383,6 +383,74 @@ html {
     font-size: 42px;
 }
 
+.re-envelop-wrapper {
+    left: 0;
+    top: 0;
+
+    position: fixed;
+
+}
+
+.re-letter {
+    padding: 26px;
+}
+
+.re-letter__header {
+
+}
+
+.re-letter__header-lt {
+    background: url(../img/letter-lt.png) no-repeat;
+    background-size: contain;
+}
+
+.re-letter__header-rt {
+    background: url(../img/letter-rt.png) no-repeat;
+    background-size: contain;
+}
+
+.re-letter__header-middle {
+    background: url(../img/letter-star.png) no-repeat;
+    background-size: contain;
+}
+
+.re-letter__innter {
+
+}
+
+.re-envelop {
+    position: absolute;
+    width: 693px;
+    height: 620px;
+    margin-top: 31px;
+}
+
+.re-envelop__background {
+    background: url(../img/letter-2.png) no-repeat;
+    background-size: contain;
+    width: 100%;
+    width: 697px;
+    height: 710px;
+    z-index: 1;
+    position: absolute;
+    top: -13px;
+}
+
+.re-envelop__foreground {
+    background: url(../img/letter-1.png) no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 450px;
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.re-envelop__content {
+    z-index: 2;
+}
+
 @font-face {
     font-family: 'Rosvigts';
     src: url('../fonts/Rosvigts.eot') format('embedded-opentype');
