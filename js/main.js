@@ -11,33 +11,46 @@ $(function () {
 
     audio.volume = 0.1
 
-    start && start.addEventListener('click', function () {
-        fall.run()
-        myaudio.volume = 0.05
-        myaudio.play()
+    if (localStorage.getItem('wish')) {
+        setTimeout(function() {
+            showWish(localStorage.getItem('wish'));
+        }, 1000);
+    } else {
 
-        firstScene.classList.add('re-hidden');
-        secondScene.classList.remove('re-hidden');
-        setTimeout(function () {
-            firstScene.style.display = 'none'
-        }, 1000)
-        document
-            .getElementById('presents')
-            .addEventListener('click', function (event) {
-                let target = event.target
-                let present = target.closest('.re-present')
+        start && start.addEventListener('click', function () {
+            fall.run()
+            myaudio.volume = 0.05
+            myaudio.play()
 
-                if (present) {
-                    // $tree.classList.add('_move-to-right');
-                    text.textContent = wishes[_.random(0, wishes.length)];
-                    textWrapper.classList.remove('re-hidden');
-                    audio.play();
-                    setTimeout(() => {
-                        letter.style.transform = 'translateY(0)';
-                    }, 2300);
-                }
-            })
-    })
+            firstScene.classList.add('re-hidden');
+            secondScene.classList.remove('re-hidden');
+            setTimeout(function () {
+                firstScene.style.display = 'none'
+            }, 1000)
+            document
+                .getElementById('presents')
+                .addEventListener('click', function (event) {
+                    let target = event.target
+                    let present = target.closest('.re-present')
+
+                    if (present) {
+                        const wish = wishes[_.random(0, wishes.length)];
+                        localStorage.setItem('wish', wish);
+
+                        showWish(wish);
+                    }
+                })
+        });
+    }
+
+    function showWish(wish) {
+        text.textContent = wish;
+        textWrapper.classList.remove('re-hidden');
+        audio.play();
+        setTimeout(() => {
+            letter.style.transform = 'translateY(0)';
+        }, 2300);
+    }
 });
 
 var wishes = [

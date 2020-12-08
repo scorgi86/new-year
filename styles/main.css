@@ -455,7 +455,11 @@ html {
     height: 60px;
 }
 
-.re-letter__innter {
+.re-letter__content {
+    text-align: center;
+}
+
+.re-letter__inner {
 
 }
 
