@@ -211,6 +211,16 @@ html {
     transition: 0.3s all;
 }
 
+.re-scene._letter {
+    z-index: 10;
+    transition: 2s;
+}
+
+.re-scene__bg-blur {
+    background-color: rgba(255,255,255,.6);
+    backdrop-filter: blur(5px)
+}
+
 .re-scene__content {
     margin-top: 100px;
 }
@@ -393,25 +403,56 @@ html {
 
 .re-letter {
     padding: 26px;
+    background: #fff;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    transition: 1.5s all;
+    transform: translateY(260px);
+}
+
+.re-letter__wrapper {
+    border: solid 2px #efcbab;
+    padding: 0 65px;
+    padding-bottom: 25px;
+    position: relative;
+    flex-grow: 1;
+}
+
+.re-letter__wrapper._top {
+    padding-top: 75px;
 }
 
 .re-letter__header {
-
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .re-letter__header-lt {
     background: url(../img/letter-lt.png) no-repeat;
     background-size: contain;
+    width: 117px;
+    height: 117px;
 }
 
 .re-letter__header-rt {
     background: url(../img/letter-rt.png) no-repeat;
     background-size: contain;
+    width: 117px;
+    height: 117px;
 }
 
 .re-letter__header-middle {
     background: url(../img/letter-star.png) no-repeat;
     background-size: contain;
+    width: 120px;
+    height: 60px;
 }
 
 .re-letter__innter {
@@ -449,6 +490,13 @@ html {
 
 .re-envelop__content {
     z-index: 2;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 81px;
+    margin-left: 18px;
+    width: 660px;
+    min-height: 536px;
+    overflow: hidden;
 }
 
 @font-face {
