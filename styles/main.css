@@ -125,6 +125,7 @@ html {
     display: flex;
     align-items: center;
     transition: 0.3s all;
+    user-select: none;
 }
 
 .re-present:hover {
@@ -222,6 +223,14 @@ html {
     transition: 2s;
 }
 
+.re-scence__particles {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .re-scene__bg-blur {
     background-color: rgba(255,255,255,.6);
     backdrop-filter: blur(5px)
@@ -244,6 +253,9 @@ html {
 
 .re-scene__title {
     text-align: center;
+    pointer-events: none;
+    height: 220px;
+    position: relative;
 }
 
 .re-scene__circle {
@@ -387,12 +399,13 @@ html {
     padding-left: 0px;
     padding-bottom: 40px;
     padding-left: 25px;
-
+    user-select: none;
 }
 
 .re-title {
     font-family: playlistscript;
     font-size: 60px;
+    user-select: none;
 }
 
 .re-title._color-red {
@@ -475,6 +488,7 @@ html {
     width: 693px;
     height: 620px;
     margin-top: 31px;
+    user-select: none;
 }
 
 .re-envelop__background {

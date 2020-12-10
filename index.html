@@ -8,6 +8,7 @@
     <link rel="image_src" href="./img/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
     <!-- Magnific Popup core CSS file -->
@@ -18,7 +19,7 @@
         <video id="myaudio" loop hidden>
             <source src="./audio/bobby_helms-jingle_bells_rock.mp3" type="audio/mp3">
         </video>
-        <div class="re-scene" id="scene__first">
+        <div class="re-scene" id="scene__particles">
             <div class="re-scene__bg">
                 <div class="re-scene__circle">
                 </div>
@@ -28,11 +29,14 @@
                 <div class="re-scene__rt"></div>
                 <div class="re-scene__lb"></div>
                 <div class="re-scene__rb"></div>
+                <canvas class="re-scence__particles" id="canvas"></canvas>
             </div>
+        </div>
+        <div class="re-scene" id="scene__first">
             <div class="re-scene__content">
                 <div class="re-scene__title">
                     <div class="re-title _size-m _color-red">
-                      Хочешь узнать<br/> что тебя ждет?
+                        Хочешь узнать<br/> что тебя ждет?
                     </div>
                 </div>
                 <div class="re-scene__action">
@@ -44,9 +48,7 @@
                 </div>
             </div>
         </div>
-
         <div class="re-scene re-hidden" id="scene__second">
-            <div class="re-scene__bg">
                 <div class="re-scene__circle-center">
                     <div class="re-scene__tree-stars-l"></div>
                     <div class="re-scene__tree-stars-r"></div>
@@ -54,7 +56,6 @@
                 <div class="re-scene__tree"></div>
                 <div class="re-scene__lt"></div>
                 <div class="re-scene__rt"></div>
-            </div>
         </div>
 
         <div class="re-scene _letter re-scene__bg-blur re-hidden" id="scene_letter">
@@ -85,6 +86,7 @@
         <script src="./libs/magnific-popup/magnific.popup.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
         <script src="./libs/falling/index.js"></script>
+        <script src="./libs/particles.js"></script>
         <script src="./js/main.js"></script>
     </body>
 </html>
