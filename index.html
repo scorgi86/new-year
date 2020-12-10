@@ -8,7 +8,7 @@
     <link rel="image_src" href="./img/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./styles/animate.css" />
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
     <!-- Magnific Popup core CSS file -->
@@ -23,12 +23,12 @@
             <div class="re-scene__bg">
                 <div class="re-scene__circle">
                 </div>
-                <div class="re-scene__star-lt"></div>
+                <div class="re-scene__star-lt tada-infinite animated infinite"></div>
                 <div class="re-scene__star-lb"></div>
                 <div class="re-scene__lt"></div>
                 <div class="re-scene__rt"></div>
                 <div class="re-scene__lb"></div>
-                <div class="re-scene__rb"></div>
+                <div class="re-scene__rb tada-infinite animated delay-1s"></div>
                 <canvas class="re-scence__particles" id="canvas"></canvas>
             </div>
         </div>
@@ -59,7 +59,7 @@
         </div>
 
         <div class="re-scene _letter re-scene__bg-blur re-hidden" id="scene_letter">
-            <div class="re-envelop">
+            <div class="re-envelop re-hidden" id="envelop">
                 <div class="re-envelop__background">
                     <div class="re-envelop__background-shadow"></div>
                 </div>
@@ -77,7 +77,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="re-envelop__foreground"></div>
+                <div class="re-envelop__foreground">
+                    <div class="re-envelop__tries">1 из 3</div>
+                </div>
             </div>
         </div>
         <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->

@@ -120,7 +120,7 @@ html {
 }
 
 .re-present {
-    width: 100px;
+    /* width: 100px; */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -397,7 +397,7 @@ html {
     font-family: 'playlistscript';
     font-size: 68px;
     padding-left: 0px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     padding-left: 25px;
     user-select: none;
 }
@@ -430,7 +430,7 @@ html {
     min-height: 400px;
     display: flex;
     flex-direction: column;
-    transition: 1.5s all;
+    transition: 0.7s all;
     transform: translateY(260px);
 }
 
@@ -462,6 +462,7 @@ html {
     background-size: contain;
     width: 117px;
     height: 117px;
+
 }
 
 .re-letter__header-rt {
@@ -511,6 +512,17 @@ html {
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+.re-envelop__tries {
+    bottom: 110px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 92px;
+    color: #fff;
 }
 
 .re-envelop__background-shadow {

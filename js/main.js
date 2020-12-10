@@ -8,7 +8,7 @@ $(function () {
     let text = document.getElementById('text')
     let textWrapper = document.getElementById('scene_letter')
     let audio = new Audio('./audio/ho-ho-ho.mp3');
-
+    let envelop = document.getElementById('envelop');
     audio.volume = 0.1
 
     if (localStorage.getItem('wish')) {
@@ -35,7 +35,7 @@ $(function () {
 
                     if (present) {
                         const wish = wishes[_.random(0, wishes.length)];
-                        localStorage.setItem('wish', wish);
+                        // localStorage.setItem('wish', wish);
 
                         showWish(wish);
                     }
@@ -46,10 +46,16 @@ $(function () {
     function showWish(wish) {
         text.textContent = wish;
         textWrapper.classList.remove('re-hidden');
+
         audio.play();
         setTimeout(() => {
-            letter.style.transform = 'translateY(0)';
-        }, 2300);
+            envelop.classList.remove('re-hidden');
+            envelop.classList.add('animated');
+            envelop.classList.add('tada');
+            setTimeout(() => {
+                letter.style.transform = 'translateY(0)';
+            }, 1500);
+        }, 1500);
     }
 });
 

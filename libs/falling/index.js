@@ -87,14 +87,14 @@ function fallingAnimation(opts) {
             speed: 100,
             animationType: 1
         };
-    };
+    }
 
     /** Вернет параметры картинки */
     function getPresentPramas() {
         return {
             leftSpacing: 20,
             rightSpacing: 20,
-            width: 100,
+            width: 150,
             height: 111.1
         };
     }
@@ -219,7 +219,7 @@ function fallingAnimation(opts) {
         var elem = null;
         var row = document.createElement('div');
         row.className = 're-presents-field-row';
-        row.style.top = (totalRowsCount - rowIndex - 1) * 45 + 'px';
+        row.style.top = (totalRowsCount - rowIndex - 1) * 120 + 'px';
         items.forEach((isVisible, index) => {
             elem = createElem({
                 text: 'Текст заглушка',
